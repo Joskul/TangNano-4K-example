@@ -109,9 +109,6 @@ end
 
 assign  running = (run_cnt < 32'd13_500_000) ? 1'b1 : 1'b0;
 
-assign  O_led[0] = running;
-assign  O_led[1] = ~init_calib;
-
 assign  XCLK = clk_12M;
 
 //===========================================================================
@@ -167,16 +164,32 @@ Reset_Sync u_Reset_Sync (
   .clk(I_clk)
 );
 
+reg [9:0]zoom_counter;
+assign resend = !key;
+wire config_finished;
+always @(posedge I_clk or negedge sys_resetn or posedge resend)
+begin
+    if(!sys_resetn) begin
+        zoom_counter <= 10'b0;
+    end
+    else if(resend) begin
+        zoom_counter <= zoom_counter + 10'h1;
+    end
+end
+
+assign  O_led[0] = resend;
+assign  O_led[1] = zoom_counter[0];
 //==============================================================================
 OV2640_Controller u_OV2640_Controller
 (
     .clk             (clk_12M),         // 24Mhz clock signal
-    .resend          (1'b0),            // Reset signal
-    .config_finished (), // Flag to indicate that the configuration is finished
+    .resend          (resend),            // Reset signal
+    .config_finished (config_finished), // Flag to indicate that the configuration is finished
     .sioc            (SCL),             // SCCB interface - clock signal
     .siod            (SDA),             // SCCB interface - data signal
     .reset           (),       // RESET signal for OV7670
-    .pwdn            ()             // PWDN signal for OV7670
+    .pwdn            (),             // PWDN signal for OV7670
+    .zoom            (zoom_counter)
 );
 
 always @(posedge PIXCLK or negedge sys_resetn) //I_clk
@@ -212,7 +225,7 @@ assign cam_data = {PIXDATA[9:5],PIXDATA[9:4],PIXDATA[9:5]}; //RAW10
 key_flag key_flag_inst(
     .clk(I_clk),
     .rst_n(I_rst_n),
-    .key(key),
+    // .key(key),
     .key_flag(key_flag)
 );
 

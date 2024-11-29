@@ -5,7 +5,8 @@ module OV2640_Controller (
     output sioc,                            // SCCB interface - clock signal
     inout siod,                             // SCCB interface - data signal
     output reset,                           // RESET signal for OV2640
-    output pwdn                             // PWDN signal for OV2640
+    output pwdn,                             // PWDN signal for OV2640
+    input [9:0] zoom
 );
 
     // Internal signals
@@ -32,7 +33,8 @@ module OV2640_Controller (
         .advance(taken),                    // Flag to advance to next register
         .command(command),                  // register value and data for OV2640
         .finished(finished),                // Flag to indicate the configuration is finshed
-        .resend(resend)                     // Re-configure flag for OV2640
+        .resend(resend),                    // Re-configure flag for OV2640
+        .zoom(zoom)
     );
     
     // Create an instance of a SCCB interface
