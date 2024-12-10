@@ -1,11 +1,11 @@
-Reading netlist file: "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\impl\gwsynthesis\camera_hdmi.vg"
-Parsing netlist file "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\impl\gwsynthesis\camera_hdmi.vg" completed
+Reading netlist file: "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\impl\gwsynthesis\camera_hdmi.vg"
+Parsing netlist file "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\impl\gwsynthesis\camera_hdmi.vg" completed
 Processing netlist completed
-Reading constraint file: "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\src\dk_video.cst"
-WARN  (CT1108) : "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\src\dk_video.cst":3 | Illegal port attribute value specified 'DRIVE = 8' on 'O_tmds_clk_p'
-WARN  (CT1108) : "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\src\dk_video.cst":5 | Illegal port attribute value specified 'DRIVE = 8' on 'O_tmds_data_p[0]'
-WARN  (CT1108) : "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\src\dk_video.cst":7 | Illegal port attribute value specified 'DRIVE = 8' on 'O_tmds_data_p[1]'
-WARN  (CT1108) : "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\src\dk_video.cst":9 | Illegal port attribute value specified 'DRIVE = 8' on 'O_tmds_data_p[2]'
+Reading constraint file: "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\src\dk_video.cst"
+WARN  (CT1108) : "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\src\dk_video.cst":3 | Illegal port attribute value specified 'DRIVE = 8' on 'O_tmds_clk_p'
+WARN  (CT1108) : "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\src\dk_video.cst":5 | Illegal port attribute value specified 'DRIVE = 8' on 'O_tmds_data_p[0]'
+WARN  (CT1108) : "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\src\dk_video.cst":7 | Illegal port attribute value specified 'DRIVE = 8' on 'O_tmds_data_p[1]'
+WARN  (CT1108) : "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\src\dk_video.cst":9 | Illegal port attribute value specified 'DRIVE = 8' on 'O_tmds_data_p[2]'
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -28,10 +28,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.power.html" completed
-Generate file "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.pin.html" completed
-Generate file "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.rpt.html" completed
-Generate file "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.rpt.txt" completed
-Generate file "C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.tr.html" completed
-Fri Nov 29 14:06:00 2024
+Generate file "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.power.html" completed
+Generate file "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.pin.html" completed
+Generate file "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.rpt.html" completed
+Generate file "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.rpt.txt" completed
+Generate file "C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\impl\pnr\camera_hdmi.tr.html" completed
+Tue Dec 10 11:34:53 2024
 

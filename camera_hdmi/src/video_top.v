@@ -213,7 +213,20 @@ end
 // assign cam_data = {pixdata_d1[9:5],pixdata_d1[4:2],PIXDATA[9:7],PIXDATA[6:2]}; //RGB565
 // assign cam_data = {PIXDATA[9:5],PIXDATA[4:2],pixdata_d1[9:7],pixdata_d1[6:2]}; //RGB565
 
-assign cam_data = {PIXDATA[9:5],PIXDATA[9:4],PIXDATA[9:5]}; //RAW10
+// assign cam_data = {PIXDATA[9:5],PIXDATA[9:4],PIXDATA[9:5]}; //RAW10
+
+wire HREF_Downsample;
+wire VSYNC_Downsample;
+RAW10_to_RGB565 Converter (
+    .clk(PIXCLK),
+    .rst(~sys_resetn),
+    .PIXDATA(PIXDATA),
+    .href(HREF),
+    .vsync(VSYNC),
+    .RGB565(cam_data),
+    .href_out(HREF_Downsample),
+    .vsync_out(VSYNC_Downsample)
+);
 
 //==============================================
 //data width 16bit   

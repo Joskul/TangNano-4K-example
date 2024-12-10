@@ -1,9 +1,9 @@
--d C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\impl\gwsynthesis\camera_hdmi.vg
+-d C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\impl\gwsynthesis\camera_hdmi.vg
 -p GW1NSR-4C-QFN48P-6
 -pn GW1NSR-LV4CQN48PC6/I5
--cst C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\src\dk_video.cst
--cfg C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\impl\pnr\device.cfg
--sdc C:\Users\hikar\Workspace\cpe222-lab\TangNano-4K-example\camera_hdmi\src\dk_video.sdc
+-cst C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\src\dk_video.cst
+-cfg C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\impl\pnr\device.cfg
+-sdc C:\Users\hikar\Workspace\cpe222-lab\mine\TangNano-4K-example\camera_hdmi\src\dk_video.sdc
 -bit
 -tr
 -ph

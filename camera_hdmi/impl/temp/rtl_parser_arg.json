@@ -2,47 +2,51 @@
  "Device" : "GW1NSR-4C",
  "Files" : [
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/dvi_tx/dvi_tx.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/dvi_tx/dvi_tx.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/gowin_pllvr/GW_PLLVR.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/gowin_pllvr/GW_PLLVR.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/gowin_pllvr/TMDS_PLLVR.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/gowin_pllvr/TMDS_PLLVR.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/hyperram_memory_interface/hyperram_memory_interface.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/hyperram_memory_interface/hyperram_memory_interface.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/ov2640/I2C_Interface.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/ov2640/I2C_Interface.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/ov2640/OV2640_Controller.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/ov2640/OV2640_Controller.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/ov2640/OV2640_Registers.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/ov2640/OV2640_Registers.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/syn_code/syn_gen.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/syn_code/syn_gen.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/testpattern.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/testpattern.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/video_frame_buffer/video_frame_buffer.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_frame_buffer/video_frame_buffer.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/src/video_top.v",
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/conversion.v",
    "Type" : "verilog"
   }
  ],
@@ -50,7 +54,7 @@
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "C:/Users/hikar/Workspace/cpe222-lab/TangNano-4K-example/camera_hdmi/impl/temp/rtl_parser.result",
+ "ResultFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/impl/temp/rtl_parser.result",
  "Top" : "video_top",
  "VerilogStd" : "sysv",
  "VhdlStd" : "vhdl_93"
