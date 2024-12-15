@@ -113,48 +113,48 @@ assign  XCLK = clk_12M;
 
 //===========================================================================
 //testpattern
-testpattern testpattern_inst
-(
-    .I_pxl_clk   (I_clk              ),//pixel clock
-    .I_rst_n     (sys_resetn         ),//low active 
-    .I_mode      ({1'b0,cnt_vs[7:6]} ),//data select
-    .I_single_r  (8'd0               ),
-    .I_single_g  (8'd255             ),
-    .I_single_b  (8'd0               ),                  //800x600    //1024x768   //1280x720    
-    .I_h_total   (16'd1650           ),//hor total time  // 16'd1056  // 16'd1344  // 16'd1650  
-    .I_h_sync    (16'd40             ),//hor sync time   // 16'd128   // 16'd136   // 16'd40    
-    .I_h_bporch  (16'd220            ),//hor back porch  // 16'd88    // 16'd160   // 16'd220   
-    .I_h_res     (16'd640            ),//hor resolution  // 16'd800   // 16'd1024  // 16'd1280  
-    .I_v_total   (16'd750            ),//ver total time  // 16'd628   // 16'd806   // 16'd750    
-    .I_v_sync    (16'd5              ),//ver sync time   // 16'd4     // 16'd6     // 16'd5     
-    .I_v_bporch  (16'd20             ),//ver back porch  // 16'd23    // 16'd29    // 16'd20    
-    .I_v_res     (16'd480            ),//ver resolution  // 16'd600   // 16'd768   // 16'd720    
-    .I_hs_pol    (1'b1               ),//HS polarity , 0:negetive ploarity，1：positive polarity
-    .I_vs_pol    (1'b1               ),//VS polarity , 0:negetive ploarity，1：positive polarity
-    .O_de        (tp0_de_in          ),   
-    .O_hs        (tp0_hs_in          ),
-    .O_vs        (tp0_vs_in          ),
-    .O_data_r    (tp0_data_r         ),   
-    .O_data_g    (tp0_data_g         ),
-    .O_data_b    (tp0_data_b         )
-);
+//testpattern testpattern_inst
+//(
+//    .I_pxl_clk   (I_clk              ),//pixel clock
+//    .I_rst_n     (sys_resetn         ),//low active 
+//    .I_mode      ({1'b0,cnt_vs[7:6]} ),//data select
+//    .I_single_r  (8'd0               ),
+//    .I_single_g  (8'd255             ),
+//    .I_single_b  (8'd0               ),                  //800x600    //1024x768   //1280x720    
+//    .I_h_total   (16'd1650           ),//hor total time  // 16'd1056  // 16'd1344  // 16'd1650  
+//    .I_h_sync    (16'd40             ),//hor sync time   // 16'd128   // 16'd136   // 16'd40    
+//    .I_h_bporch  (16'd220            ),//hor back porch  // 16'd88    // 16'd160   // 16'd220   
+//    .I_h_res     (16'd640            ),//hor resolution  // 16'd800   // 16'd1024  // 16'd1280  
+//    .I_v_total   (16'd750            ),//ver total time  // 16'd628   // 16'd806   // 16'd750    
+//    .I_v_sync    (16'd5              ),//ver sync time   // 16'd4     // 16'd6     // 16'd5     
+//    .I_v_bporch  (16'd20             ),//ver back porch  // 16'd23    // 16'd29    // 16'd20    
+//    .I_v_res     (16'd480            ),//ver resolution  // 16'd600   // 16'd768   // 16'd720    
+//    .I_hs_pol    (1'b1               ),//HS polarity , 0:negetive ploarity，1：positive polarity
+//    .I_vs_pol    (1'b1               ),//VS polarity , 0:negetive ploarity，1：positive polarity
+//    .O_de        (tp0_de_in          ),   
+//    .O_hs        (tp0_hs_in          ),
+//    .O_vs        (tp0_vs_in          ),
+//    .O_data_r    (tp0_data_r         ),   
+//    .O_data_g    (tp0_data_g         ),
+//    .O_data_b    (tp0_data_b         )
+//);
 
-always@(posedge I_clk)
-begin
-    vs_r<=tp0_vs_in;
-end
+//always@(posedge I_clk)
+//begin
+//    vs_r<=tp0_vs_in;
+//end
 
-always@(posedge I_clk or negedge sys_resetn)
-begin
-    if(!sys_resetn)
-        cnt_vs<=0;
-    else if(cnt_vs==10'h3ff)
-        cnt_vs<=cnt_vs;
-    else if(vs_r && !tp0_vs_in) //vs24 falling edge
-        cnt_vs<=cnt_vs+1;
-    else
-        cnt_vs<=cnt_vs;
-end 
+//always@(posedge I_clk or negedge sys_resetn)
+//begin
+//    if(!sys_resetn)
+//        cnt_vs<=0;
+//    else if(cnt_vs==10'h3ff)
+//        cnt_vs<=cnt_vs;
+//    else if(vs_r && !tp0_vs_in) //vs24 falling edge
+//        cnt_vs<=cnt_vs+1;
+//    else
+//        cnt_vs<=cnt_vs;
+//end 
 
 // Camera reset
 
@@ -177,8 +177,8 @@ begin
     end
 end
 
-assign  O_led[0] = resend;
-assign  O_led[1] = zoom_counter[0];
+//assign  O_led[0] = resend;
+//assign  O_led[1] = zoom_counter[0];
 //==============================================================================
 OV2640_Controller u_OV2640_Controller
 (
@@ -211,34 +211,40 @@ begin
 end
 
 // assign cam_data = {pixdata_d1[9:5],pixdata_d1[4:2],PIXDATA[9:7],PIXDATA[6:2]}; //RGB565
-// assign cam_data = {PIXDATA[9:5],PIXDATA[4:2],pixdata_d1[9:7],pixdata_d1[6:2]}; //RGB565
+ assign cam_data = {PIXDATA[9:5],PIXDATA[4:2],pixdata_d1[9:7],pixdata_d1[6:2]}; //RGB565
 
-// assign cam_data = {PIXDATA[9:5],PIXDATA[9:4],PIXDATA[9:5]}; //RAW10
+//assign cam_data = {PIXDATA[9:5],PIXDATA[9:4],PIXDATA[9:5]}; //RAW10
 
-wire HREF_Downsample;
-wire VSYNC_Downsample;
-RAW10_to_RGB565 Converter (
-    .clk(PIXCLK),
-    .rst(~sys_resetn),
-    .PIXDATA(PIXDATA),
-    .href(HREF),
-    .vsync(VSYNC),
-    .RGB565(cam_data),
-    .href_out(HREF_Downsample),
-    .vsync_out(VSYNC_Downsample)
-);
+reg capture_enable;
+reg capture_done;
 
-//==============================================
-//data width 16bit   
-    assign ch0_vfb_clk_in  = key_flag ? I_clk : PIXCLK;       
-    assign ch0_vfb_vs_in   = key_flag ? ~tp0_vs_in : VSYNC;  //negative
-    assign ch0_vfb_de_in   = key_flag ? tp0_de_in : HREF;//hcnt;  
-    assign ch0_vfb_data_in = key_flag ? {tp0_data_r[7:3],tp0_data_g[7:2],tp0_data_b[7:3]} : cam_data; // RGB565
+// Capture enable and done control
+always @(posedge I_clk or negedge I_rst_n) begin
+    if (!I_rst_n) begin
+        capture_enable <= 1'b0;
+        capture_done <= 1'b0;
+    end else if (key_flag && !capture_done) begin
+        capture_enable <= 1'b1;  // Start capturing when the key is pressed
+    end else if (VSYNC && capture_enable) begin
+        capture_done <= 1'b1;  // Mark capture as done at the end of the frame
+        capture_enable <= 1'b0; // Stop capturing
+    end
+end
+
+// Frame buffer input modifications
+assign ch0_vfb_clk_in  = PIXCLK;       
+assign ch0_vfb_vs_in   = VSYNC;  
+assign ch0_vfb_de_in   = capture_enable ? HREF : 1'b0;  // Only enable data during capture
+assign ch0_vfb_data_in = cam_data;  // RAW10 format or modified RGB565 format
+
+// LED status for debugging
+assign O_led[0] = capture_enable;  // LED indicates capturing state
+assign O_led[1] = capture_done;    // LED indicates capture completion
   
 key_flag key_flag_inst(
     .clk(I_clk),
     .rst_n(I_rst_n),
-    // .key(key),
+    .key(key),
     .key_flag(key_flag)
 );
 

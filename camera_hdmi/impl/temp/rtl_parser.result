@@ -1,5 +1,13 @@
 [
  {
+  "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/conversion.v",
+  "InstLine" : 1,
+  "InstName" : "RAW10_to_RGB565",
+  "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/conversion.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "RAW10_to_RGB565"
+ },
+ {
   "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
   "InstLine" : 1,
   "InstName" : "video_top",
@@ -9,18 +17,10 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "InstLine" : 116,
-    "InstName" : "testpattern_inst",
-    "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/testpattern.v",
-    "ModuleLine" : 17,
-    "ModuleName" : "testpattern"
-   },
-   {
-    "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
     "InstLine" : 161,
     "InstName" : "u_Reset_Sync",
     "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "ModuleLine" : 399,
+    "ModuleLine" : 405,
     "ModuleName" : "Reset_Sync"
    },
    {
@@ -51,23 +51,15 @@
    },
    {
     "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "InstLine" : 220,
-    "InstName" : "Converter",
-    "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/conversion.v",
-    "ModuleLine" : 1,
-    "ModuleName" : "RAW10_to_RGB565"
-   },
-   {
-    "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "InstLine" : 238,
+    "InstLine" : 244,
     "InstName" : "key_flag_inst",
     "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "ModuleLine" : 418,
+    "ModuleLine" : 424,
     "ModuleName" : "key_flag"
    },
    {
     "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "InstLine" : 247,
+    "InstLine" : 253,
     "InstName" : "Video_Frame_Buffer_Top_inst",
     "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_frame_buffer/video_frame_buffer.v",
     "ModuleLine" : 3014,
@@ -85,7 +77,7 @@
    },
    {
     "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "InstLine" : 279,
+    "InstLine" : 285,
     "InstName" : "GW_PLLVR_inst",
     "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/gowin_pllvr/GW_PLLVR.v",
     "ModuleLine" : 8,
@@ -93,7 +85,7 @@
    },
    {
     "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "InstLine" : 286,
+    "InstLine" : 292,
     "InstName" : "HyperRAM_Memory_Interface_Top_inst",
     "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/hyperram_memory_interface/hyperram_memory_interface.v",
     "ModuleLine" : 3735,
@@ -111,7 +103,7 @@
    },
    {
     "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "InstLine" : 311,
+    "InstLine" : 317,
     "InstName" : "syn_gen_inst",
     "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/syn_code/syn_gen.v",
     "ModuleLine" : 1,
@@ -119,7 +111,7 @@
    },
    {
     "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "InstLine" : 363,
+    "InstLine" : 369,
     "InstName" : "TMDS_PLLVR_inst",
     "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/gowin_pllvr/TMDS_PLLVR.v",
     "ModuleLine" : 9,
@@ -127,7 +119,7 @@
    },
    {
     "InstFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-    "InstLine" : 380,
+    "InstLine" : 386,
     "InstName" : "DVI_TX_Top_inst",
     "ModuleFile" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/dvi_tx/dvi_tx.v",
     "ModuleLine" : 1048,

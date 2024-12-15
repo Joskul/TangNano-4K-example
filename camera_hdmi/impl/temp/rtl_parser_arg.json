@@ -2,6 +2,10 @@
  "Device" : "GW1NSR-4C",
  "Files" : [
   {
+   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/conversion.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/dvi_tx/dvi_tx.v",
    "Type" : "verilog"
   },
@@ -34,19 +38,11 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/testpattern.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_frame_buffer/video_frame_buffer.v",
    "Type" : "verilog"
   },
   {
    "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/video_top.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "C:/Users/hikar/Workspace/cpe222-lab/mine/TangNano-4K-example/camera_hdmi/src/conversion.v",
    "Type" : "verilog"
   }
  ],
