@@ -20,6 +20,8 @@ module video_top(
     output     [2:0]  O_tmds_data_p   ,//{r,g,b}
     output     [2:0]  O_tmds_data_n   ,
 
+    input [1:0]zoom,
+
     input key
 );
 
@@ -165,15 +167,64 @@ Reset_Sync u_Reset_Sync (
 );
 
 reg [9:0]zoom_counter;
-assign resend = !key;
+reg resend;
 wire config_finished;
-always @(posedge I_clk or negedge sys_resetn or posedge resend)
+
+reg [1:0]zoom_prev;
+reg zoom_in;
+reg zoom_out;
+
+// Always block for pulse detection
+always @(posedge I_clk or negedge sys_resetn) begin
+    if (!sys_resetn) begin
+        // Reset all outputs and internal states
+        zoom_prev <= 2'b00;
+        zoom_in <= 0;
+        zoom_out <= 0;
+    end else begin
+        // Detect zoom input change and generate pulses
+        zoom_in <= 0;  // Reset zoom_in pulse
+        zoom_out <= 0; // Reset zoom_out pulse
+
+        // Detect the change from 00 to 10 (Zoom In)
+        if (zoom_prev == 2'b00 && zoom == 2'b10) begin
+            zoom_in <= 1;  // Generate zoom_in pulse
+        end
+
+        // Detect the change from 11 to 00 (Zoom Out)
+        if (zoom_prev == 2'b11 && zoom == 2'b00) begin
+            zoom_out <= 1;  // Generate zoom_out pulse
+        end
+
+        // Update the previous zoom input value
+        zoom_prev <= zoom;
+    end
+end
+
+always @(posedge I_clk or negedge sys_resetn)
 begin
     if(!sys_resetn) begin
         zoom_counter <= 10'b0;
+        resend <= 1;
     end
-    else if(resend) begin
-        zoom_counter <= zoom_counter + 10'h1;
+    else begin
+        if (zoom_in) begin
+            resend <= 1;
+            if (zoom_counter >= 10'b1100000000) begin
+                zoom_counter <= 10'h0;
+            end else begin
+                zoom_counter <= zoom_counter - 10'hFF;
+            end 
+        end else if (zoom_out) begin
+            resend <= 1;
+            if (zoom_counter <= 10'hFF) begin
+                zoom_counter <= 10'h0;
+            end else begin
+                zoom_counter <= zoom_counter - 10'hFF;
+            end 
+        end else begin
+            resend <= 0;
+        end
     end
 end
 
@@ -210,10 +261,10 @@ begin
         hcnt <= 1'd0;
 end
 
-// assign cam_data = {pixdata_d1[9:5],pixdata_d1[4:2],PIXDATA[9:7],PIXDATA[6:2]}; //RGB565
- assign cam_data = {PIXDATA[9:5],PIXDATA[4:2],pixdata_d1[9:7],pixdata_d1[6:2]}; //RGB565
+//  assign cam_data = {pixdata_d1[9:5],pixdata_d1[4:2],PIXDATA[9:7],PIXDATA[6:2]}; //RGB565
+//  assign cam_data = {PIXDATA[9:5],PIXDATA[4:2],pixdata_d1[9:7],pixdata_d1[6:2]}; //RGB565
 
-//assign cam_data = {PIXDATA[9:5],PIXDATA[9:4],PIXDATA[9:5]}; //RAW10
+assign cam_data = {PIXDATA[9:5],PIXDATA[9:4],PIXDATA[9:5]}; //RAW10
 
 reg capture_enable;
 reg capture_done;
